@@ -25,20 +25,37 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
+          position: `relative`,
+          minHeight: `100vh`,
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <main
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `1rem 1rem 3rem 1rem`,
+            position: `relative`,
+          }}
+        >
+          {children}
+        </main>
+        <footer
+          style={{
+            position: `absolute`,
+            bottom: 0,
+            width: `100%`,
+            height: `3rem`,
+            lineHeight: `3rem`,
+            padding: `0 1rem`,
+            textAlign: `center`,
+            background: `#333`,
+            color: `#ddd`,
+          }}
+        >
+          © {new Date().getFullYear()}, Above Solutions
         </footer>
       </div>
     </>
